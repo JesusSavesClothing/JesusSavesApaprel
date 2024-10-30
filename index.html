@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus Saves Apparel</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Main background color is black */
+            color: #f8d471; /* Gold color for text */
+            line-height: 1.6; /* Improved line spacing */
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: #f8d471; /* Gold color for links */
+        }
+
+        /* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.9); /* Transparent black for header */
+    color: #f8d471; /* Gold text in header */
+    padding: 10px 15px; /* Reduced padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease; /* For smooth hiding and revealing */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    padding: 10px 15px; /* Reduced padding */
+    text-transform: uppercase;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    border-bottom: 2px solid transparent; /* Bottom border for active link effect */
+    font-weight: bold; /* Bold text for navigation */
+    font-size: 14px; /* Slightly smaller font size */
+}
+
+nav a:hover {
+    background-color: rgba(248, 212, 113, 0.2); /* Light gold background on hover */
+    border-bottom: 2px solid #f8d471; /* Highlight active link */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+
+
+/* Hero Section Styles */
+.hero {
+    background: linear-gradient(to bottom right, #1a1a1a, #0e0e0e); /* Gradient from dark gray shades */
+    color: #f8d471; /* Gold text color for contrast */
+    text-align: center;
+    padding: 100px 20px; /* Increased padding for more height */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* Goldish shadow */
+    animation: fadeIn 1s ease-in; /* Apply fade-in animation */
+}
+
+.hero h2 {
+    font-size: 36px; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.hero p {
+    font-size: 20px; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space below paragraph */
+}
+
+.hero .bible-verse {
+    font-size: 18px; /* Font size for Bible verse */
+    font-style: italic; /* Italic style for emphasis */
+    margin-bottom: 20px; /* Space below verse */
+}
+
+.cta {
+    background-color: #f8d471; /* Gold button */
+    color: black; /* Black text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    font-weight: bold; /* Bold text */
+    font-size: 16px; /* Larger font size */
+    text-decoration: none; /* Remove underline */
+}
+
+.cta:hover {
+    background-color: #e0c26e; /* Darker gold on hover */
+}
+
+        /* Featured Products Section Styles */
+.container {
+    padding: 40px 20px; /* Increased padding for better spacing */
+    text-align: center;
+    background: linear-gradient(to bottom right, #1a1a1a, #0e0e0e); /* New gradient from dark gray shades */
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* Goldish shadow */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: black; /* Black background for product cards */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); /* Goldish shadow */
+    text-align: center;
+    transition: transform 0.3s ease; /* Animation on hover */
+    position: relative; /* For hover effects */
+    overflow: hidden; /* Ensures shadows and effects are contained */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Stronger shadow on hover */
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth image effect */
+}
+
+.product-card img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.product-card h3 {
+    margin: 15px 0;
+    color: #f8d471; /* Gold for product titles */
+    font-size: 22px; /* Slightly larger font size */
+}
+
+.product-card p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #f8d471; /* Gold for product prices */
+    font-size: 18px; /* Slightly larger font size */
+}
+
+.buy-now {
+    background-color: #f8d471; /* Gold button */
+    color: black; /* Black text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    font-weight: bold; /* Bold text */
+    font-size: 16px; /* Larger font size */
+    margin-top: 10px; /* Space above button */
+}
+
+.buy-now:hover {
+    background-color: #e0c26e; /* Darker gold on hover */
+}
+
+       /* Categories Section Styles */
+.categories {
+    padding: 40px 20px;
+    background: linear-gradient(to bottom right, #1a1a1a, #0e0e0e); /* Gradient background */
+    text-align: center;
+}
+
+.categories h2 {
+    margin-bottom: 20px;
+    color: #f8d471; /* Gold for category title */
+    font-size: 36px; /* Larger font size for visibility */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Text shadow for better visibility */
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.category-buttons a {
+    padding: 15px 30px;
+    background-color: #444; /* Darker category buttons */
+    color: #f8d471; /* Gold text */
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    font-weight: bold; /* Bold text */
+    font-size: 16px; /* Slightly larger font size */
+}
+
+.category-buttons a:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+
+        /* Footer Styles */
+        footer {
+            background-color: #222; /* Dark footer to match header */
+            color: #f8d471; /* Gold text in footer */
+            text-align: center;
+            padding: 15px 0;
+            position: relative; /* Allow footer to stay at the bottom */
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px; /* Space above footer */
+            box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 36px; /* Smaller font size for mobile */
+            }
+
+            .hero p {
+                font-size: 18px; /* Smaller font size for mobile */
+            }
+
+            .product-card h3 {
+                font-size: 20px; /* Adjust for mobile */
+            }
+
+            .product-card p {
+                font-size: 16px; /* Adjust for mobile */
+            }
+
+            nav a {
+                font-size: 14px; /* Smaller font size for navigation */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Jesus Saves Apparel</h1>
+    <nav>
+        <a href="about.html">About Us</a>
+        <a href="#products">Products</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h2>Embrace Your Faith</h2>
+    <p>Wear your belief with confidence.</p>
+    <p class="bible-verse">"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit." - Matthew 28:19</p>
+    <a href="#products" class="cta">Shop Now</a>
+</section>
+
+<!-- Featured Products Section -->
+<section class="container" id="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="tshirt1.jpg" alt="Jesus Saves T-shirt">
+            <h3>Jesus Saves T-shirt</h3>
+            <p>$19.99</p>
+            <button class="buy-now" aria-label="Buy Jesus Saves T-shirt">Buy Now</button>
+        </div>
+        <div class="product-card">
+            <img src="hoodie1.jpg" alt="Faith Over Fear Hoodie">
+            <h3>Faith Over Fear Hoodie</h3>
+            <p>$39.99</p>
+            <button class="buy-now" aria-label="Buy Faith Over Fear Hoodie">Buy Now</button>
+        </div>
+        <div class="product-card">
+            <img src="hat1.jpg" alt="Blessed Hat">
+            <h3>Blessed Hat</h3>
+            <p>$24.99</p>
+            <button class="buy-now" aria-label="Buy Blessed Hat">Buy Now</button>
+        </div>
+        <div class="product-card">
+            <img src="bracelet1.jpg" alt="Faith Bracelet">
+            <h3>Faith Bracelet</h3>
+            <p>$9.99</p>
+            <button class="buy-now" aria-label="Buy Faith Bracelet">Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-buttons">
+        <a href="#tshirts">T-Shirts</a>
+        <a href="#hoodies">Hoodies</a>
+        <a href="#accessories">Accessories</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Jesus Saves Apparel. All rights reserved.</p>
+</footer>
+<script>
+    let lastScrollTop = 0; // Keep track of the last scroll position
+    const header = document.querySelector('header'); // Select the header
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop; // Current scroll position
+
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down
+            header.style.transform = 'translateY(-100%)'; // Hide header
+        } else {
+            // Scrolling up
+            header.style.transform = 'translateY(0)'; // Show header
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+</script>
+
+</body>
+</html>
